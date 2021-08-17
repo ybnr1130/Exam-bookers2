@@ -25,12 +25,12 @@
                 <%= link_to "Home", root_path %>
               </li>
               <li class="nav-list-item">
-                <%= link_to "Users" %>
-                <!--destroy_user_session_path,-->
+                <%= link_to "Users"  %>
+                <!--users_path-->
               </li>
               <li class="nav-list-item">
                 <%= link_to "Books" %>
-                <!--destroy_user_session_path,-->
+                <!--books_path-->
               </li>
               <li class="nav-list-item">
                 <%= link_to "logout", destroy_user_session_path, method: :delete %>
@@ -40,7 +40,7 @@
                 <%= link_to "Home", root_path %>
               </li>
               <li class="nav-list-item">
-                <%= link_to "About" %>
+                <%= link_to "About", about_path %>
               </li>
               <li class="nav-list-item">
                 <%= link_to "sign up", new_user_registration_path %>
