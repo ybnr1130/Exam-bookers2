@@ -1,0 +1,39 @@
+<h1>User info</h1>
+<p>Image area</p>
+<p>name : <%= @user.name %></p>
+<p>introduction<%= @user.introduction %></p>
+
+
+<h1>New book</h1>
+<%= form_with model:@book, local:true do |f| %>
+    <p>Title</p>
+    <%= f.text_field :title %>
+    <p>Opinion</p>
+    <%= f.text_area :body %>
+    <%=f.submit 'Create Book' %>
+<% end %>
+
+<h1>Users</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @users.each do |user| %>
+                <tr>
+                    <!--< attachment_image_tag post_image, :image >-->
+                    <td>投稿ユーザー画像：< image_tag('sample-author1.jpg') %></td>
+                    <td><%= user.name %></td>
+                    <td><%= link_to "Show", user_path(user.id) %></td>
+                </tr>
+        <% end %>
+    </tbody>
+</table>
+
+    
+
+
