@@ -1,5 +1,5 @@
 <h1>User info</h1>
-<p>Image area</p>
+<%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %>
 <p>name : <%= @user.name %></p>
 <p>introduction<%= @user.introduction %></p>
 
@@ -25,8 +25,7 @@
     <tbody>
         <% @users.each do |user| %>
                 <tr>
-                    <!--< attachment_image_tag post_image, :image >-->
-                    <td>投稿ユーザー画像：< image_tag('sample-author1.jpg') %></td>
+                    <td><%= attachment_image_tag user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %></td>
                     <td><%= user.name %></td>
                     <td><%= link_to "Show", user_path(user.id) %></td>
                 </tr>

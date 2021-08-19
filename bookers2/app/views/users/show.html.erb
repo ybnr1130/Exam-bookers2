@@ -1,5 +1,5 @@
 <h1>User info</h1>
-<p>Image area</p>
+<%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %>
 <p>name : <%= @user.name %></p>
 <p>introdaction : <%= @user.introduction %></p>
 
