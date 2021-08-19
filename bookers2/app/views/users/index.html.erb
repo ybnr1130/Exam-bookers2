@@ -2,7 +2,7 @@
 <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %>
 <p>name : <%= @user.name %></p>
 <p>introduction<%= @user.introduction %></p>
-
+<%= link_to "Edit", edit_user_path(@user.id) %>
 
 <h1>New book</h1>
 <%= form_with model:@book, local:true do |f| %>
