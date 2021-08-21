@@ -13,46 +13,5 @@
  *= require_tree .
  *= require_self
  */
+@import "font-awesome";
 
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-header {
-  width: 90%; /* 横幅90% */
-  padding: 15px 0;
-  margin: 0 auto;
-  text-align: left;
-  
-}
-
-.nav-list {
-  text-align: center;
-  padding: 10px 0;
-  margin: 0 auto;
-}
-
-.nav-list-left {
-  text-align: left;
-  list-style: none;
-  display: flex;
-  margin-right: auto;
-  margin-left: 20px
-}
-.nav-list-right {
-  text-align: right;
-  list-style: none;
-  display: flex;
-  margin-left: auto;
-  margin-right: 20px
-}
-
-.nav-list-item {
-  text-align: right;
-  list-style: none;
-  display: inl;
-  margin: 0 20px;
-}
