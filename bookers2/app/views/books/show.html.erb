@@ -1,22 +1,31 @@
 <p><%= flash[:success] %></p>
 
-<!--ここから部分テンプレート-->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4">
 
-<%= render 'users/user', user: @user %>
-<%= render 'books/book', book: @newbook %>
+      <!--ここから部分テンプレート-->
 
-<!--ここまで部分テンプレート-->
+      <%= render 'users/user', user: @user %>
+      <%= render 'books/book', book: @newbook %>
 
-<h1>Book detail</h1>
-<table>
-  <tr>
-    <td><%= attachment_image_tag @book.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %></td>
-    <td><%= link_to @user.name, user_path(@user.id) %></td>
-    <td><%= link_to @book.title, book_path(@book.id) %></td>
-    <td><%= @book.body %></td>
-    <% if @book.user_id == current_user.id %>
-      <td><%= link_to "Edit", edit_book_path(@book) %></td>
-      <td><%= link_to "Destroy", book_path(@book), method: :delete, "data-confirm" => "本当に消しますか？" %></td>
-    <% end %>
-  </tr>
-</table>
+      <!--ここまで部分テンプレート-->
+
+    </div>
+    <div class="col-lg-8">
+      <h1>Book detail</h1>
+      <table class="table table-striped">
+        <tr>
+          <td><%= attachment_image_tag @book.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %></td>
+          <td><%= link_to @user.name, user_path(@user.id) %></td>
+          <td><%= link_to @book.title, book_path(@book.id) %></td>
+          <td><%= @book.body %></td>
+          <% if @book.user_id == current_user.id %>
+            <td><%= link_to "Edit", edit_book_path(@book) %></td>
+            <td><%= link_to "Destroy", book_path(@book), method: :delete, "data-confirm" => "本当に消しますか？" %></td>
+          <% end %>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
