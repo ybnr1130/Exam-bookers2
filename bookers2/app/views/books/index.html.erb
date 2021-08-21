@@ -1,35 +1,20 @@
 <p><%= flash[:success] %></p>
 
+<!--ここからバリデーション-->
 <% if @book.errors.any? %>
   <%= @book.errors.count %> errors prohibited this obj from being saved:
   <% @book.errors.full_messages.each do |message| %>
     <li><%= message %></li>
   <% end %>
 <% end %>
+<!--ここまでバリデーション-->
 
+<!--ここから部分テンプレート-->
 
-<h1>User info</h1>
-<%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %>
-<p>name : <%= @user.name %></p>
-<p>introduction : <%= @user.introduction %></p>
-<% if @user.id == current_user.id %>
-<%= link_to edit_user_path(@user.id), method: :get do %>
-<i class="fas fa-user-cog"></i>
-<% end %>
-<% else %>
-<%= link_to user_path(current_user.id), method: :get do %>
-<i class="fas fa-user-cog"></i>
-<% end %>
-<% end %>
+<%= render 'users/user', user: @user %>
+<%= render 'books/book', book: @book %>
 
-<h1>New book</h1>
-<%= form_with model:@book, local:true do |f| %>
-<p>Title</p>
-<%= f.text_field :title %>
-<p>Opinion</p>
-<%= f.text_area :body %>
-<%=f.submit 'Create Book' %>
-<% end %>
+<!--ここまで部分テンプレート-->
 
 <h1>Books</h1>
 <table>
