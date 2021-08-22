@@ -2,11 +2,11 @@
 
 <div class="container">
   <div class="row">
-　　<div class="col-lg-4">
-　　  <!--ここからバリデーション-->
-      <% if @newbook.errors.any? %>
-        <%= @newbook.errors.count %> errors prohibited this obj from being saved:
-        <% @newbook.errors.full_messages.each do |message| %>
+    <div class="col-md-3">
+      <!--ここからバリデーション-->
+      <% if @book.errors.any? %>
+        <%= @book.errors.count %> errors prohibited this obj from being saved:
+        <% @book.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
       <% end %>
@@ -15,11 +15,11 @@
       <!--ここから部分テンプレート-->
 
       <%= render 'users/user', user: @user %>
-      <%= render 'books/book', book: @newbook %>
+      <%= render 'books/book', book: @book %>
 
       <!--ここまで部分テンプレート-->
     </div>
-    <div class="col-lg-8">
+    <div class="col-md-8 offset-md-1">
       <h1>Books</h1>
       <table class="table table-striped">
         <thead>

@@ -3,12 +3,6 @@
 <%= attachment_image_tag user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %>
 <p>name : <%= user.name %></p>
 <p>introduction : <%= user.introduction %></p>
-<% if user.id == current_user.id %>
    <%= link_to edit_user_path(user.id), method: :get do %>
   <i class="fas fa-user-cog"></i>
-<% end %>
-<% else %>
-  <%= link_to user_path(current_user.id), method: :get do %>
-  <i class="fas fa-user-cog"></i>
-<% end %>
 <% end %>
